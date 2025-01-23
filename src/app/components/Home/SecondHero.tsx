@@ -51,6 +51,7 @@ const SecondHero = () => {
         productName: 'B&B Italian Sofa', 
         price: 32.00, 
         productImage: '/secondhero.png',
+        stock:100
       }} 
       showText={true}  // Pass prop to show text
     />

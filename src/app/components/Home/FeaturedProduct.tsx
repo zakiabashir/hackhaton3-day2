@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { IoCartOutline, IoHeartOutline } from 'react-icons/io5';
 import { AiOutlineZoomIn } from 'react-icons/ai';
 import Link from 'next/link';
 import ZoomModal from './ZoomModal';
@@ -194,8 +193,9 @@ const FeaturedProduct = () => {
                         }}
                         showText={false}
                         selectedColor={selectedColors[product._id]}
-                      />
+                        />
                     </div>
+
 
                     <div className="p-2 bg-white rounded-full hover:bg-[#2F1AC4] hover:text-white text-[#2F1AC4] transition-colors duration-100 ease-linear w-10 h-10 flex justify-center items-center">
                       <WishlistButton

@@ -116,10 +116,19 @@ const CartPage = () => {
           </div>
           <p className="text-lg sm:ml-16 xl:ml-10">${item.price}</p>
           <div className="flex items-center justify-center sm:justify-start">
-          <button onClick={() => dispatch(decreaseQuantity(item._id))} className="border px-2">–</button>
-<span className="mx-2">{item.quantity}</span>
-<button onClick={() => dispatch(increaseQuantity(item._id))} className="border px-2">+</button>
-     </div>
+  <button onClick={() => dispatch(decreaseQuantity(item._id))} className="border px-2 py-1 rounded">
+    –
+  </button>
+  <span className="mx-2">{item.quantity}</span>
+  <button
+    onClick={() => dispatch(increaseQuantity(item._id))}
+    className="border px-2 py-1 rounded"
+    disabled={false} // No need to disable since we're not using stock
+  >
+    +
+  </button>
+</div>
+
           <p className="text-lg">${(item.quantity * item.price).toFixed(2)}</p>
         </div>
       ))}

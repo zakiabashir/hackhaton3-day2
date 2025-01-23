@@ -25,6 +25,7 @@ const DiscountItem = () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur, nisl nec ultricies lacinia, nisl nisl aliquet nisl, nec aliquam nisl nisl sit amet nisl.',
       features: ['it is a sofa , chair & so comfortable', 'it is a well designed sofa ', 'it is so light weight ', 'it is to be used in any room'],
       id: 1,
+      stock:220
     },
     {
       imageSrc: '/s16.jpeg',
@@ -34,6 +35,7 @@ const DiscountItem = () => {
       description:
         'Sed consectetur, nisl nec ultricies lacinia, nisl nisl aliquet nisl, nec aliquam nisl nisl sit amet nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       features: ['Feature A is that it is a plastic chair ', 'Feature B is to be used in any room', 'Feature C is that it is very easy to move', 'Feature D is that it is a plastic chair'],
+      stock:220,
       id: 2,
     },
     {
@@ -45,6 +47,8 @@ const DiscountItem = () => {
         'Nisl nisl aliquet nisl, nec aliquam nisl nisl sit amet nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur, nisl nec ultricies lacinia.',
       features: ['Feature X is that it is a sofa collection', 'Feature Y is to be used in any room', 'Feature Z is that it is very easy to move', 'Feature W is that it is a sofa collection'],
     id: 3,
+    stock:220
+
     },
   ];
 

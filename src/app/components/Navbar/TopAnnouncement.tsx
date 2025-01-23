@@ -25,22 +25,23 @@ const TopAnnouncement = () => {
           {/* Right Section */}
           <div className="flex flex-wrap gap-4 items-center">
             {/* Dropdowns */}
-            <TopAnnouncementClient />
+            <div className='hidden lg:flex gap-2'><TopAnnouncementClient /></div>
+            
 
             {/* Login Link */}
-            <Link href="/pages/sign-in" className="flex items-center gap-1 hover:text-gray-200">
+            <Link href="/pages/sign-in" className="hidden lg:flex items-center gap-1 hover:text-gray-200">
               <span>Login</span>
               <IoPersonOutline />
             </Link>
 
             {/* Wishlist Link */}
-            <Link href="/pages/wishlist" className="flex items-center gap-1 hover:text-gray-200">
+            <Link href="/pages/wishlist" className="hidden lg:flex items-center gap-1 hover:text-gray-200">
               <span>Wishlist</span>
               <IoHeartOutline />
             </Link>
 
             {/* Cart Link */}
-            <Link href="/pages/cart" className="flex items-center gap-1 hover:text-gray-200 ml-2">
+            <Link href="/pages/cart" className="hidden lg:flex items-center gap-1 hover:text-gray-200 ml-2">
               <CartIcon />
             </Link>
           </div>

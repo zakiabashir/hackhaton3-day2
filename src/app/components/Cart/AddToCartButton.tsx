@@ -22,12 +22,12 @@ const AddToCartButton = ({ showText, product, selectedColor }: AddToCartButtonPr
   const dispatch = useDispatch();
   const [currentStock, setCurrentStock] = useState(product.stock ?? 0);
 
-if (product.stock === undefined) {
-  console.warn('Stock information is missing for product:', product);
-}
+  if (product.stock === undefined) {
+    console.warn('Stock information is missing for product:', product);
+  }
 
-  const isOutOfStock = currentStock <= 0;
-
+  const isOutOfStock = currentStock <= 0; // Keep this line here, it will be used later
+  
   const handleAddToCart = () => {
     if (isOutOfStock) {
       toast.error('Sorry, this product is out of stock!');
@@ -42,13 +42,16 @@ if (product.stock === undefined) {
       size: product.size || '',
       productName: product.productName || '',
       price: product.price || 0,
-      stock: currentStock,
+      stock: currentStock || 0,
       _id: product._id || '',
       totalQuantity: 1,
     };
 
+    // Dispatch the action to add to cart
     dispatch(addToCart(productWithQuantity));
-    setCurrentStock((prevStock) => prevStock - 1); // Reduce stock dynamically
+
+    // Update stock locally (decrease by 1)
+    setCurrentStock((prevStock) => prevStock - 1);
 
     toast.success(
       <div className="flex items-center space-x-4">
@@ -70,31 +73,17 @@ if (product.stock === undefined) {
   };
 
   return (
-    <div className="flex items-center justify-between p-4 ">
-      {/* Add to Cart Button */}
+    <div className="flex items-center justify-between p-4">
       <button
         onClick={handleAddToCart}
         disabled={isOutOfStock}
-        className={`px-4 py-2 rounded-md transition-colors duration-200 ${
-          isOutOfStock
-            ? 'text-gray-600 cursor-not-allowed'
-            : 'text-indigo-500 hover:text-white'
-        }`}
+        className={`px-4 py-2 rounded-md transition-colors duration-200 ${isOutOfStock ? 'text-gray-600 cursor-not-allowed' : 'text-indigo-500 hover:text-white'}`}
       >
-        {showText ? (
-          'Add to Cart'
-        ) : (
-          <FaShoppingCart size={20} className="" />
-        )}
+        {showText ? 'Add to Cart' : <FaShoppingCart size={20} />}
       </button>
 
-      {/* Stock Information (shown only if showText is true) */}
       {showText && (
-        <span
-          className={`ml-4 text-sm font-semibold ${
-            currentStock > 0 ? 'text-green-600' : 'text-red-800'
-          }`}
-        >
+        <span className={`ml-4 text-sm font-semibold ${currentStock > 0 ? 'text-green-600' : 'text-red-800'}`}>
           {currentStock > 0 ? `In Stock: ${currentStock}` : 'Out of Stock'}
         </span>
       )}

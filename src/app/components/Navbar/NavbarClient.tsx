@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FiChevronDown, FiMenu, FiSearch, FiX } from "react-icons/fi";
 import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetDescription, SheetClose } from "@/components/ui/sheet";
+import CartIcon from "../Cart/CartIcon";
 
 export default function NavbarClient() {
   const [showHomeDropdown, setShowHomeDropdown] = useState(false);
@@ -30,6 +31,13 @@ export default function NavbarClient() {
     { href: "/blog", label: "Blog" },
     { href: "/pages/shopLeft", label: "Shop" },
     { href: "/contact", label: "Contact" },
+    { href: "/CreatorPage", label: "About Creator" },
+    { href: "/pages/wishlist", label: "whishlist" },
+    { href: "/pages/cart", label: "cart" },
+    { href: "/pages/faq", label: "faq" },
+    { href: "/pages/shop-grid-default", label: "shop grid default" },
+
+
   ];
 
   return (
@@ -88,6 +96,27 @@ export default function NavbarClient() {
                             onClick={() => { closeHomeDropdown(); setIsMenuOpen(false); }} // Close menu and dropdown on click
                           >
                             Sign In
+                          </Link>
+                          <Link
+                            href="/pages/wishlist"
+                            className="block px-4 py-2 text-sm text-[#0D0E43] hover:bg-gray-100 hover:text-[#fb2e86] transition-all duration-300"
+                            onClick={() => { closeHomeDropdown(); setIsMenuOpen(false); }} // Close menu and dropdown on click
+                          >
+                            Whishlist
+                          </Link>
+                          <Link
+                            href="/creatorpage"
+                            className="block px-4 py-2 text-sm text-[#0D0E43] hover:bg-gray-100 hover:text-[#fb2e86] transition-all duration-300"
+                            onClick={() => { closeHomeDropdown(); setIsMenuOpen(false); }} // Close menu and dropdown on click
+                          >
+                           About Creater
+                          </Link>
+                          <Link
+                            href="/pages/cart"
+                            className="block px-4 py-2 text-sm text-[#0D0E43] hover:bg-gray-100 hover:text-[#fb2e86] transition-all duration-300"
+                            onClick={() => { closeHomeDropdown(); setIsMenuOpen(false); }} // Close menu and dropdown on click
+                          >
+                          <CartIcon />
                           </Link>
                           <Link
                             href="/pages/faq"

@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { faArrowRight, faHeart, faStar } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import Link from "next/link";
 import AddToCartButton from "@/app/components/Cart/AddToCartButton";
 import NavigationLinksForDynamicPages from "@/app/components/NavigationLinksForDynamicPages";
 import WishlistButton from "@/app/components/wishlist/wishListButton";
@@ -17,7 +16,7 @@ const client = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
     useCdn: true,
-    apiVersion: '2021-08-31'
+    apiVersion: '2025-01-15'
 });
 
 const builder = imageUrlBuilder(client);
